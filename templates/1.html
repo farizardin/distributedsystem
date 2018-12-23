@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Raft</title>
+		<!-- Styles -->
+		<link href="{{url_for('static',filename='css/bv4.min.css')}}" rel="stylesheet">
+		<link href= "{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
+		<!-- Scripts -->
+	</head>
+	<body>
+		<div id="app">
+			<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-primary">
+				<div class="container">					
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand"">
+						<!-- <img src="../../www.cscpro.org/image/sZ4g.png" height="30" class="d-inline-block align-top" title="Institut Teknologi Sepuluh Nopember"> -->
+						Get Data
+					</a>
+					<!-- layouts.nav -->
+					<div class="collapse navbar-collapse" id="navbarColor01">
+						<ul class="nav navbar-nav mr-auto">
+						</ul>
+						<ul class="nav navbar-nav">
+					</div>
+				</div>
+			</nav>
+			<div id="content" class="container">
+				<ul class="breadcrumb">
+</ul>
+<div class="row">
+	<div class="col-md-6">
+        <div class="white-box">
+            <div class="card my-4">
+                <form method="post" action="" class="card-block">
+                    <div class="form-group">
+                        <div>
+                            <label>{{act1}} {{ serverip }} {{act2}} {{ test }}</label>
+                        </div>
+                        <label>Pilih Server</label>
+                        <select class="form-control" id="order-field_id" name="field_id" onchange="changeSlotField(this)" required>
+                            <option value="">--Pilih Opsi--</option>
+                            <option value={{server1}}>127.0.0.1:{{ server1 }}</option>
+                            <option value={{server2}}>127.0.0.1:{{ server2 }}</option>
+                            <option value={{server3}}>127.0.0.1:{{ server3 }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="sport_id" id="order-sport_id" value="1">
+                        <button type="submit" class="btn btn-primary">Get</button>
+                    </div>
+                    <input type="hidden" name="_token" value="StWn3m44pojrh3tcW0sI2LBQuEZFKvbenhRb2BUS">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+			</div>
+			<footer class="bd-footer text-muted">
+			</footer>
+		</div>
+		<!-- Scripts -->
+<!-- 		<script src="http://fasor.its.ac.id/js/app.js"></script> -->
+		<script src="../../cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="../../cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+		<script src="../../cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		<script src="../../js/main.js"></script>
+		<script src="../../cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/id.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.id.min.js"></script>
+<script>
+	$( '#calendar' ).fullCalendar( {
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'basicWeek'
+        },
+        defaultView: 'basicWeek',
+        height: 550,
+        events: []
+    } );
+    $( '#order-tanggal' ).datepicker({
+        language: 'id',
+        startDate: '+3d',
+        todayHighlight: true,
+    } );
+    $( '#order-tanggal2' ).datepicker({
+        language: 'id',
+        startDate: '+3d',
+        todayHighlight: true,
+    } );
+    function changeSlotField(e){
+        var slots = [{"id":"84","keterangan":"Shift 1 (06.00 - 08.00)","lapangan":"6"},{"id":"85","keterangan":"Shift 2 (08.00 - 10.00)","lapangan":"6"},{"id":"86","keterangan":"Shift 3 (10.00 - 12.00)","lapangan":"6"},{"id":"87","keterangan":"Shift 4 (12.00 - 14.00)","lapangan":"6"},{"id":"88","keterangan":"Shift 5 (14.00 - 16.00)","lapangan":"6"},{"id":"89","keterangan":"Shift 6 (16.00 - 18.00)","lapangan":"6"},{"id":"90","keterangan":"Shift 7 (18.00 - 20.00)","lapangan":"6"},{"id":"91","keterangan":"Shift 8 (20.00 - 22.00)","lapangan":"6"},{"id":"92","keterangan":"Shift 1 (06.00 - 08.00)","lapangan":"13"},{"id":"93","keterangan":"Shift 2 (08.00 - 10.00)","lapangan":"13"},{"id":"94","keterangan":"Shift 3 (10.00 - 12.00)","lapangan":"13"},{"id":"95","keterangan":"Shift 4 (12.00 - 14.00)","lapangan":"13"},{"id":"96","keterangan":"Shift 5 (14.00 - 16.00)","lapangan":"13"},{"id":"97","keterangan":"Shift 6 (16.00 - 18.00)","lapangan":"13"},{"id":"98","keterangan":"Shift 7 (18.00 - 20.00)","lapangan":"13"},{"id":"99","keterangan":"Shift 8 (20.00 - 22.00)","lapangan":"13"}];
+        var value = e.value;
+        $("#order-slot_id").empty();
+        $(slots).each(function(i) {
+            if(slots[i].lapangan == value){
+                $("#order-slot_id").append("<option value='" + slots[i].id + "'>" + slots[i].keterangan + "</option>");
+            }
+        });
+    }
+    function changeSlotPengguna(e){
+        var value = e.value;
+        if (value == 'U')
+        {
+            document.getElementById("label-noid").innerHTML = "No KTP/SIM";
+        }
+        else
+        {
+            document.getElementById("label-noid").innerHTML = "NIP/NRP";
+        }
+    }
+    function id_card(e)
+    {
+        var max_chars = 16;
+        if (e.value.length > max_chars)
+        {
+            e.value = e.value.substring(0,max_chars);
+        }
+        if (!/^[0-9]+$/.test(e.value) || (e.value.length == 1 && e.value == '0'))
+        {
+            e.value = e.value.substring(0,e.value.length-max_chars);
+        }
+    }
+    function special_caracter(e)
+    {
+        var max_chars = 45;
+        if (e.value.length > max_chars)
+        {
+            e.value = e.value.substring(0,max_chars);
+        }
+        if (/\`|\~|\!|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/.test(e.value))
+        {
+            e.value = e.value.substring(0,e.value.length-max_chars);
+        }
+    }
+    function phone_number(e)
+    {
+        var max_chars = 18;
+        if (e.value.length > max_chars)
+        {
+            e.value = e.value.substring(0,max_chars);
+        }
+        if (!/^[0-9 ]+$/.test(e.value))
+        {
+            e.value = e.value.substring(0,e.value.length-max_chars);
+        }
+    }
+</script>
+	</body>
+</html>
